@@ -28,8 +28,8 @@ Ensure you have the following installed on your system:
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd <repository-name>
+   git clone https://github.com/goranmrd/supply-chain
+   cd supply-chain
    ```
 2. Build the Docker Compose project:
    ```bash
@@ -47,7 +47,7 @@ Ensure you have the following installed on your system:
 After running docker-compose up, the project starts with the following services:
 
 `db`: The PostgreSQL database. \
-`web`: The Django backend.
+`web`: The Django backend. \
 `test`: Running Django tests and exits
 
 The Django server is accessible on http://localhost:8000/ but no endpoints are available for root.
@@ -96,3 +96,12 @@ If you need to rebuild the project, you can use the following commands:
 ```
 
 For additional assistance, refer to the [Django documentation](https://docs.djangoproject.com/en/stable/) or the [Docker documentation](https://docs.docker.com/).
+
+## Production deployment + CI/CD
+Make GCP infra provisioning for Cloudrun - manual or IAC (terraform etc.)
+- create image artifact
+- create cloudrun service
+- setup service account and store the key
+
+Create workflow for github actions by using `google-github-actions/deploy-cloudrun@v2` and setup all required env vars
+PROJECT_ID, REGION, GCP_CREDS
