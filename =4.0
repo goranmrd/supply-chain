@@ -1,0 +1,23 @@
+Collecting Django
+  Downloading Django-5.0.4-py3-none-any.whl.metadata (4.1 kB)
+Collecting djangorestframework
+  Downloading djangorestframework-3.15.1-py3-none-any.whl.metadata (11 kB)
+Collecting asgiref<4,>=3.7.0 (from Django)
+  Downloading asgiref-3.8.1-py3-none-any.whl.metadata (9.3 kB)
+Collecting sqlparse>=0.3.1 (from Django)
+  Downloading sqlparse-0.5.0-py3-none-any.whl.metadata (3.9 kB)
+Collecting tzdata (from Django)
+  Using cached tzdata-2024.1-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting typing-extensions>=4 (from asgiref<4,>=3.7.0->Django)
+  Downloading typing_extensions-4.11.0-py3-none-any.whl.metadata (3.0 kB)
+Downloading Django-5.0.4-py3-none-any.whl (8.2 MB)
+   ---------------------------------------- 8.2/8.2 MB 16.9 MB/s eta 0:00:00
+Downloading djangorestframework-3.15.1-py3-none-any.whl (1.1 MB)
+   ---------------------------------------- 1.1/1.1 MB 17.0 MB/s eta 0:00:00
+Downloading asgiref-3.8.1-py3-none-any.whl (23 kB)
+Downloading sqlparse-0.5.0-py3-none-any.whl (43 kB)
+   ---------------------------------------- 44.0/44.0 kB 2.1 MB/s eta 0:00:00
+Using cached tzdata-2024.1-py2.py3-none-any.whl (345 kB)
+Downloading typing_extensions-4.11.0-py3-none-any.whl (34 kB)
+Installing collected packages: tzdata, typing-extensions, sqlparse, asgiref, Django, djangorestframework
+Successfully installed Django-5.0.4 asgiref-3.8.1 djangorestframework-3.15.1 sqlparse-0.5.0 typing-extensions-4.11.0 tzdata-2024.1

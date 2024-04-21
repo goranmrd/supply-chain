@@ -1,0 +1,48 @@
+services:
+  db:
+    image: postgres:14-alpine
+    environment:
+      POSTGRES_USER: test_user
+      POSTGRES_PASSWORD: test_password
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  web:
+    build:
+      context: .
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py create_test_user &&
+             python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_NAME: postgres
+      DATABASE_USER: test_user
+      DATABASE_PASSWORD: test_password
+      DATABASE_HOST: db
+
+  test:
+    build:
+      context: .
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py test"
+    depends_on:
+      - db
+    environment:
+      DATABASE_NAME: postgres
+      DATABASE_USER: test_user
+      DATABASE_PASSWORD: test_password
+      DATABASE_HOST: db
+
+volumes:
+  pgdata:
+    driver: local
